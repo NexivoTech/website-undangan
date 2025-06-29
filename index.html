@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Wedding of Lorem & Ipsum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+
+    <section class="cover">
+        <div class="overlay">
+            <div class="cover-content">
+                <p class="subtitle">THE WEDDING OF</p>
+                <h1 class="title">Nadya & Iwan</h1>
+                <p class="to">Yth. Bapak/Ibu/Saudara/i</p>
+                <p class="name">Fulan & Partner</p>
+                <a href="wedding.html" class="btn-open">Open Invitation</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestName = urlParams.get('to');
+
+        if (guestName) {
+            const nameElement = document.querySelector('.name');
+            nameElement.textContent = decodeURIComponent(guestName);
+        }
+    </script>
+
+</body>
+
+</html>
