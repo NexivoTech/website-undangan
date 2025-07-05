@@ -10,6 +10,7 @@ body {
   background: #fffaf6;
   color: #333;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .container {
@@ -22,6 +23,51 @@ body {
   text-align: center;
 }
 
+/* Animasi Kustom */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
 /* Cover */
 #cover {
   background: #fffaf6;
@@ -29,6 +75,47 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+#cover h3,
+#cover p,
+#cover .small,
+#cover .lorem,
+#cover .and,
+#cover .ipsum,
+#cover .quote {
+  opacity: 0;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+#cover h3 {
+  animation-delay: 0.1s;
+}
+
+#cover .small {
+  animation-delay: 0.2s;
+}
+
+#cover .lorem {
+  animation-delay: 0.3s;
+}
+
+#cover .and {
+  animation-delay: 0.4s;
+}
+
+#cover .ipsum {
+  animation-delay: 0.5s;
+}
+
+#cover .quote {
+  animation-delay: 0.6s;
+}
+
+#cover img {
+  opacity: 0;
+  animation: zoomIn 1s ease-out forwards;
+  animation-delay: 0.7s;
 }
 
 .cover-wrapper {
@@ -139,6 +226,18 @@ body {
   font-weight: 500;
 }
 
+#bride-groom .invite-bar p,
+.bride-row h3,
+.groom-row h3,
+.bride-row p,
+.groom-row p,
+.bride-photo img,
+.groom-photo img,
+.bride-row .vertical-text,
+.groom-row .vertical-text {
+  opacity: 0;
+}
+
 .bride-row,
 .groom-row {
   display: flex;
@@ -149,17 +248,20 @@ body {
   margin-bottom: 5rem;
 }
 
-.bride-photo img{
+.bride-photo img,
+.groom-photo img {
   width: 400px;
+}
+
+.bride-photo img{
   border-radius: 10px 10px 120px 10px;
 }
 
 .groom-photo img {
-  width: 400px;
   border-radius: 10px 10px 10px 120px;
 }
 
-.bride-row .vertical-text{
+.bride-row .vertical-text {
   transform: rotate(180deg);
 }
 
@@ -240,6 +342,11 @@ body {
   min-width: 250px;
 }
 
+.event h3,
+.event p {
+  opacity: 0;
+}
+
 .event .acara {
   font-size: 24px;
   font-weight: bold;
@@ -268,6 +375,7 @@ body {
   border-radius: 20px;
   color: #a45f34;
   cursor: pointer;
+  opacity: 0;
 }
 
 .countdown {
@@ -285,18 +393,26 @@ body {
   font-size: 36px;
   font-weight: bold;
   display: block;
+  opacity: 0;
 }
 
 .countdown-item small {
   font-size: 14px;
   color: #777;
+  opacity: 0;
 }
-
 
 /* Location */
 #location {
   background: #fff7f2;
   padding: 60px 0;
+}
+
+#location h3,
+#location p,
+.map-wrapper iframe,
+#btn-location {
+  opacity: 0;
 }
 
 .map-wrapper {
@@ -364,12 +480,14 @@ body {
   min-width: 350px;
 }
 
-.quote-text blockquote {
+.quote-text p {
   font-style: italic;
   font-size: 18px;
   color: #5e5e5e;
   line-height: 1.7;
   max-width: 600px;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .quote-image {
@@ -382,6 +500,7 @@ body {
   width: 100%;
   border-radius: 10px 10px 10px 450px;
   object-fit: cover;
+  opacity: 0;
 }
 
 /* Gallery */
@@ -392,14 +511,19 @@ body {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: column; 
+  overflow-x: auto;  
   gap: 20px;
   margin-top: 30px;
 }
 
 .gallery-grid img {
   width: 100%;
+  display: block;
+  height: auto;
   border-radius: 10px;
+  opacity: 0;
 }
 
 #gallery h3 {
@@ -408,6 +532,7 @@ body {
   font-weight: bold;
   color: #C3937C;
   margin-bottom: 20px;
+  opacity: 0;
 }
 
 /* RSVP */
@@ -433,6 +558,7 @@ body {
   width: 100%;
   max-width: 400px;
   border-radius: 10px 10px 200px 10px;
+  opacity: 0;
 }
 
 .rsvp-form {
@@ -444,6 +570,9 @@ body {
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
+  opacity: 0;
+  animation: slideInLeft 1s ease-out forwards;
+  animation-delay: 0.2s;
 }
 
 .rsvp-form form {
@@ -461,6 +590,7 @@ body {
   padding: 10px 5px;
   font-size: 16px;
   outline: none;
+  opacity: 0;
 }
 
 .rsvp-form select {
@@ -476,11 +606,57 @@ body {
   border-radius: 0;
   cursor: pointer;
   transition: 0.3s ease;
+  opacity: 0;
 }
 
 .rsvp-form button:hover {
   background: #232323;
   color: white;
+}
+
+#rsvp-list {
+  margin-top: 30px;
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 10px;
+  scrollbar-width: thin; 
+}
+
+#rsvp-list::-webkit-scrollbar {
+  width: 6px;
+}
+#rsvp-list::-webkit-scrollbar-thumb {
+  background: #c3937c;
+  border-radius: 6px;
+}
+
+.rsvp-entry {
+  background: #f8f5f0;
+  border-left: 4px solid #c3937c;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  min-height: 100px;
+}
+
+.rsvp-entry:hover {
+  transform: scale(1.01);
+}
+
+.rsvp-entry p {
+  margin: 0;
+  line-height: 1.6;
+  color: #444;
+  font-size: 15px;
+}
+
+.rsvp-entry strong {
+  font-size: 16px;
+  color: #a45f34;
 }
 
 /* Send Gift */
@@ -505,6 +681,7 @@ body {
   font-family: 'Playfair Display', cursive;
   font-size: 24px;
   margin-bottom: 40px;
+  opacity: 0;
 }
 
 .gift-content {
@@ -520,49 +697,40 @@ body {
   line-height: 1.6;
   color: #222;
   text-align: left;
+  padding-right: 20px;
 }
 
 .gift-left p {
   font-weight: 550;
+  opacity: 0;
 }
 
 .gift-divider {
   width: 2px;
-  background-color: #000000;
+  background-color: #555;
   height: auto;
-  align-self: stretch; 
+  align-self: stretch;
 }
 
 .gift-right {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   font-size: 15px;
   color: #333;
-  text-align: left;
-}
-
-.gift-select {
-  margin-bottom: 20px;
-}
-
-.gift-select label {
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.gift-select select {
-  padding: 6px 12px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: 1px solid #a45f34;
-  background: white;
-  color: #333;
-  margin-top: 6px;
 }
 
 .gift-info {
-  border-bottom: 2px solid #333;
-  width: 50%;
+  border-bottom: 1px solid #333;
   padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gift-info p {
+  opacity: 0;
 }
 
 .copy-btn {
@@ -575,6 +743,7 @@ body {
   align-items: center;
   color: #a45f34;
   transition: color 0.3s ease;
+  opacity: 0;
 }
 
 .copy-btn:hover {
@@ -593,6 +762,11 @@ footer {
   color: white;
   padding: 0;
   height: 100vh;
+  width: 100vw;
+}
+
+footer .footer-bg {
+  display: none;
 }
 
 .footer-wrapper {
@@ -610,6 +784,7 @@ footer {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 0;
 }
 
 .footer-right {
@@ -628,6 +803,7 @@ footer {
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
+  opacity: 0;
 }
 
 .footer-text p {
@@ -635,6 +811,7 @@ footer {
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: center;
+  opacity: 0;
 }
 
 .footer-text .copyright {
@@ -645,6 +822,7 @@ footer {
   font-size: 14px;
   color: #f8eaea;
   text-align: center;
+  opacity: 0;
 }
 
 /* Music */
@@ -665,6 +843,9 @@ footer {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: background 0.3s ease;
+  opacity: 0;
+  animation: zoomIn 1s ease-out forwards;
+  animation-delay: 0.1s;
 }
 
 #music-toggle:hover {
@@ -707,7 +888,7 @@ footer {
     z-index: 2;
     width: 100%;
     text-align: center;
-    padding: 5rem 1.5rem;
+    padding: 8rem 1.5rem;
   }
 
   .cover-left .small,
@@ -717,6 +898,7 @@ footer {
   .cover-left .quote {
     position: static;
     transform: none;
+    text-align: start;
     margin: 0.5rem 0;
   }
 
@@ -735,9 +917,13 @@ footer {
     color:rgb(205, 93, 53);
   }
 
+  .cover-left .lorem,
+  .cover-left .ipsum {
+    font-size: 80px;
+  }
+
   .cover-left .quote {
-    font-size: 20px;
-    text-align: center;
+    font-size: 15px;
     max-width: 100%;
   }
 
@@ -789,6 +975,15 @@ footer {
     display: none;
   }
 
+  .invite-bar p {
+    font-size: 16px;
+  }
+  
+  .anim-left,
+  .anim-right {
+    transform: translateY(30px);
+  }
+
   /* === QUOTE === */
   #quote {
     padding: 40px 20px;
@@ -801,6 +996,10 @@ footer {
     width: 100%;
     border-radius: 10px 10px 10px 450px;
     object-fit: cover;
+  }
+
+  .quote-text p {
+    font-size: 16px;
   }
 
   /* === EVENT === */
@@ -837,6 +1036,15 @@ footer {
     font-size: 14px;
   }
 
+  .rsvp-entry {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .rsvp-entry p {
+    font-size: 14px;
+  }
+
   /* === SEND GIFT === */
   .gift-content {
     flex-direction: column;
@@ -853,14 +1061,33 @@ footer {
     width: 100%;
   }
 
-  .gift-select {
-    margin: 20px 0;
+  .gift-right {
+    flex-direction: row;
   }
+
+  .gift-info {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+  }
+
 
   /* === FOOTER === */
   footer {
-    background: url('../img/img13.jpeg') no-repeat center center;
-    background-size: cover;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  footer .footer-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 45%;
+    z-index: 0;
   }
 
   .footer-wrapper {
@@ -898,7 +1125,7 @@ footer {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 749px) {
 
   /* COVER */
   .cover-left .small {
@@ -958,7 +1185,7 @@ footer {
     align-items: center;
   }
 
-  .quote-text blockquote {
+  .quote-text p {
     font-size: 20px;
     max-width: 600px;
   }
