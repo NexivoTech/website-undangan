@@ -888,7 +888,7 @@ footer .footer-bg {
     z-index: 2;
     width: 100%;
     text-align: center;
-    padding: 8rem 1.5rem;
+    padding: 15rem 1.5rem;
   }
 
   .cover-left .small,
@@ -914,12 +914,21 @@ footer .footer-bg {
   .cover-left .lorem,
   .cover-left .and,
   .cover-left .ipsum {
-    color:rgb(205, 93, 53);
+    color:rgb(255, 116, 36);
   }
 
   .cover-left .lorem,
   .cover-left .ipsum {
-    font-size: 80px;
+    font-size: 60px;
+  }
+
+  .cover-left .and {
+    font-size: 40px;
+    margin-top: -1rem;
+  }
+
+  .cover-left .ipsum {
+    margin-top: -1rem;
   }
 
   .cover-left .quote {
